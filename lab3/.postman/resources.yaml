@@ -1,0 +1,13 @@
+# Use this workspace to collaborate
+workspace:
+  id: 302c6cdd-0dee-443d-870e-85dbca7e5588
+
+localResources:
+  collections:
+    - ../Lab-03-Postman-Collection.json
+    - ../lab-03/Lab-03-Postman-Collection.json
+    - ../lab-03/postman/Lab3-Books-API.postman_collection.json
+    - ../labreport2-clone/lab-03/postman/Lab3-Books-API.postman_collection.json
+  environments:
+    - ../lab-03/postman/Lab3.postman_environment.json
+    - ../labreport2-clone/lab-03/postman/Lab3.postman_environment.json

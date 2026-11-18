@@ -1,0 +1,101 @@
+
+After fresh seed (SELECT id, title, author, price, pages FROM book ORDER BY id):
+┌─────────┬────┬──────────────────────────────┬────────────────────────┬───────┬───────┐
+│ (index) │ id │ title                        │ author                 │ price │ pages │
+├─────────┼────┼──────────────────────────────┼────────────────────────┼───────┼───────┤
+│ 0       │ 1  │ 'Updated by Postman'         │ 'F. Scott Fitzgerald'  │ 355   │ 180   │
+│ 1       │ 2  │ 'To Kill a Mockingbird'      │ 'Harper Lee'           │ 420   │ 281   │
+│ 2       │ 3  │ '1984'                       │ 'George Orwell'        │ 299   │ 328   │
+│ 3       │ 4  │ 'Pride and Prejudice'        │ 'Jane Austen'          │ 250   │ 279   │
+│ 4       │ 5  │ 'The Catcher in the Rye'     │ 'J.D. Salinger'        │ 310   │ 214   │
+│ 5       │ 6  │ 'The Hobbit'                 │ 'J.R.R. Tolkien'       │ 450   │ 310   │
+│ 6       │ 7  │ 'Fahrenheit 451'             │ 'Ray Bradbury'         │ 280   │ 256   │
+│ 7       │ 8  │ 'The Alchemist'              │ 'Paulo Coelho'         │ 299   │ 208   │
+│ 8       │ 9  │ 'Brave New World'            │ 'Aldous Huxley'        │ 340   │ 268   │
+│ 9       │ 10 │ 'Crime and Punishment'       │ 'Fyodor Dostoevsky'    │ 499   │ 430   │
+│ 10      │ 11 │ 'Clean Code'                 │ 'Robert C. Martin'     │ 650   │ 464   │
+│ 11      │ 12 │ 'The Pragmatic Programmer'   │ 'Andrew Hunt'          │ 720   │ 352   │
+│ 12      │ 13 │ 'Design Patterns'            │ 'Erich Gamma'          │ 850   │ 395   │
+│ 13      │ 14 │ 'Introduction to Algorithms' │ 'Thomas H. Cormen'     │ 950   │ 1312  │
+│ 14      │ 15 │ 'JavaScript: The Good Parts' │ 'Douglas Crockford'    │ 320   │ 176   │
+│ 15      │ 16 │ "You Don't Know JS"          │ 'Kyle Simpson'         │ 380   │ 278   │
+│ 16      │ 17 │ 'Node.js Design Patterns'    │ 'Mario Casciaro'       │ 580   │ 520   │
+│ 17      │ 18 │ 'Database System Concepts'   │ 'Abraham Silberschatz' │ 890   │ 1376  │
+└─────────┴────┴──────────────────────────────┴────────────────────────┴───────┴───────┘
+POST /books: 201 {"message":"Book created successfully","data":{"id":20,"title":"Evidence Capture Book","author":"Test Author","price":460,"pages":288}}
+
+After create (SELECT id, title, author, price, pages FROM book ORDER BY id):
+┌─────────┬────┬──────────────────────────────┬────────────────────────┬───────┬───────┐
+│ (index) │ id │ title                        │ author                 │ price │ pages │
+├─────────┼────┼──────────────────────────────┼────────────────────────┼───────┼───────┤
+│ 0       │ 1  │ 'Updated by Postman'         │ 'F. Scott Fitzgerald'  │ 355   │ 180   │
+│ 1       │ 2  │ 'To Kill a Mockingbird'      │ 'Harper Lee'           │ 420   │ 281   │
+│ 2       │ 3  │ '1984'                       │ 'George Orwell'        │ 299   │ 328   │
+│ 3       │ 4  │ 'Pride and Prejudice'        │ 'Jane Austen'          │ 250   │ 279   │
+│ 4       │ 5  │ 'The Catcher in the Rye'     │ 'J.D. Salinger'        │ 310   │ 214   │
+│ 5       │ 6  │ 'The Hobbit'                 │ 'J.R.R. Tolkien'       │ 450   │ 310   │
+│ 6       │ 7  │ 'Fahrenheit 451'             │ 'Ray Bradbury'         │ 280   │ 256   │
+│ 7       │ 8  │ 'The Alchemist'              │ 'Paulo Coelho'         │ 299   │ 208   │
+│ 8       │ 9  │ 'Brave New World'            │ 'Aldous Huxley'        │ 340   │ 268   │
+│ 9       │ 10 │ 'Crime and Punishment'       │ 'Fyodor Dostoevsky'    │ 499   │ 430   │
+│ 10      │ 11 │ 'Clean Code'                 │ 'Robert C. Martin'     │ 650   │ 464   │
+│ 11      │ 12 │ 'The Pragmatic Programmer'   │ 'Andrew Hunt'          │ 720   │ 352   │
+│ 12      │ 13 │ 'Design Patterns'            │ 'Erich Gamma'          │ 850   │ 395   │
+│ 13      │ 14 │ 'Introduction to Algorithms' │ 'Thomas H. Cormen'     │ 950   │ 1312  │
+│ 14      │ 15 │ 'JavaScript: The Good Parts' │ 'Douglas Crockford'    │ 320   │ 176   │
+│ 15      │ 16 │ "You Don't Know JS"          │ 'Kyle Simpson'         │ 380   │ 278   │
+│ 16      │ 17 │ 'Node.js Design Patterns'    │ 'Mario Casciaro'       │ 580   │ 520   │
+│ 17      │ 18 │ 'Database System Concepts'   │ 'Abraham Silberschatz' │ 890   │ 1376  │
+│ 18      │ 20 │ 'Evidence Capture Book'      │ 'Test Author'          │ 460   │ 288   │
+└─────────┴────┴──────────────────────────────┴────────────────────────┴───────┴───────┘
+PUT /books/1: 200 {"message":"Book updated successfully","data":{"id":1,"title":"Updated Evidence Title","author":"F. Scott Fitzgerald","price":365,"pages":180}}
+
+After update (SELECT id, title, author, price, pages FROM book ORDER BY id):
+┌─────────┬────┬──────────────────────────────┬────────────────────────┬───────┬───────┐
+│ (index) │ id │ title                        │ author                 │ price │ pages │
+├─────────┼────┼──────────────────────────────┼────────────────────────┼───────┼───────┤
+│ 0       │ 1  │ 'Updated Evidence Title'     │ 'F. Scott Fitzgerald'  │ 365   │ 180   │
+│ 1       │ 2  │ 'To Kill a Mockingbird'      │ 'Harper Lee'           │ 420   │ 281   │
+│ 2       │ 3  │ '1984'                       │ 'George Orwell'        │ 299   │ 328   │
+│ 3       │ 4  │ 'Pride and Prejudice'        │ 'Jane Austen'          │ 250   │ 279   │
+│ 4       │ 5  │ 'The Catcher in the Rye'     │ 'J.D. Salinger'        │ 310   │ 214   │
+│ 5       │ 6  │ 'The Hobbit'                 │ 'J.R.R. Tolkien'       │ 450   │ 310   │
+│ 6       │ 7  │ 'Fahrenheit 451'             │ 'Ray Bradbury'         │ 280   │ 256   │
+│ 7       │ 8  │ 'The Alchemist'              │ 'Paulo Coelho'         │ 299   │ 208   │
+│ 8       │ 9  │ 'Brave New World'            │ 'Aldous Huxley'        │ 340   │ 268   │
+│ 9       │ 10 │ 'Crime and Punishment'       │ 'Fyodor Dostoevsky'    │ 499   │ 430   │
+│ 10      │ 11 │ 'Clean Code'                 │ 'Robert C. Martin'     │ 650   │ 464   │
+│ 11      │ 12 │ 'The Pragmatic Programmer'   │ 'Andrew Hunt'          │ 720   │ 352   │
+│ 12      │ 13 │ 'Design Patterns'            │ 'Erich Gamma'          │ 850   │ 395   │
+│ 13      │ 14 │ 'Introduction to Algorithms' │ 'Thomas H. Cormen'     │ 950   │ 1312  │
+│ 14      │ 15 │ 'JavaScript: The Good Parts' │ 'Douglas Crockford'    │ 320   │ 176   │
+│ 15      │ 16 │ "You Don't Know JS"          │ 'Kyle Simpson'         │ 380   │ 278   │
+│ 16      │ 17 │ 'Node.js Design Patterns'    │ 'Mario Casciaro'       │ 580   │ 520   │
+│ 17      │ 18 │ 'Database System Concepts'   │ 'Abraham Silberschatz' │ 890   │ 1376  │
+│ 18      │ 20 │ 'Evidence Capture Book'      │ 'Test Author'          │ 460   │ 288   │
+└─────────┴────┴──────────────────────────────┴────────────────────────┴───────┴───────┘
+DELETE /books/20: 200 {"message":"Book deleted successfully"}
+
+After delete (SELECT id, title, author, price, pages FROM book ORDER BY id):
+┌─────────┬────┬──────────────────────────────┬────────────────────────┬───────┬───────┐
+│ (index) │ id │ title                        │ author                 │ price │ pages │
+├─────────┼────┼──────────────────────────────┼────────────────────────┼───────┼───────┤
+│ 0       │ 1  │ 'Updated Evidence Title'     │ 'F. Scott Fitzgerald'  │ 365   │ 180   │
+│ 1       │ 2  │ 'To Kill a Mockingbird'      │ 'Harper Lee'           │ 420   │ 281   │
+│ 2       │ 3  │ '1984'                       │ 'George Orwell'        │ 299   │ 328   │
+│ 3       │ 4  │ 'Pride and Prejudice'        │ 'Jane Austen'          │ 250   │ 279   │
+│ 4       │ 5  │ 'The Catcher in the Rye'     │ 'J.D. Salinger'        │ 310   │ 214   │
+│ 5       │ 6  │ 'The Hobbit'                 │ 'J.R.R. Tolkien'       │ 450   │ 310   │
+│ 6       │ 7  │ 'Fahrenheit 451'             │ 'Ray Bradbury'         │ 280   │ 256   │
+│ 7       │ 8  │ 'The Alchemist'              │ 'Paulo Coelho'         │ 299   │ 208   │
+│ 8       │ 9  │ 'Brave New World'            │ 'Aldous Huxley'        │ 340   │ 268   │
+│ 9       │ 10 │ 'Crime and Punishment'       │ 'Fyodor Dostoevsky'    │ 499   │ 430   │
+│ 10      │ 11 │ 'Clean Code'                 │ 'Robert C. Martin'     │ 650   │ 464   │
+│ 11      │ 12 │ 'The Pragmatic Programmer'   │ 'Andrew Hunt'          │ 720   │ 352   │
+│ 12      │ 13 │ 'Design Patterns'            │ 'Erich Gamma'          │ 850   │ 395   │
+│ 13      │ 14 │ 'Introduction to Algorithms' │ 'Thomas H. Cormen'     │ 950   │ 1312  │
+│ 14      │ 15 │ 'JavaScript: The Good Parts' │ 'Douglas Crockford'    │ 320   │ 176   │
+│ 15      │ 16 │ "You Don't Know JS"          │ 'Kyle Simpson'         │ 380   │ 278   │
+│ 16      │ 17 │ 'Node.js Design Patterns'    │ 'Mario Casciaro'       │ 580   │ 520   │
+│ 17      │ 18 │ 'Database System Concepts'   │ 'Abraham Silberschatz' │ 890   │ 1376  │
+└─────────┴────┴──────────────────────────────┴────────────────────────┴───────┴───────┘
