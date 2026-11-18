@@ -1,15 +1,17 @@
 const sqlite3 = require("sqlite3").verbose();
 const path = require("path");
 
-// Resolve the absolute path to users.db in the current directory
-const dbPath = path.join(__dirname, "users.db");
+// Resolve database path (supports optional DB_PATH environment variable, defaults to users.db)
+const dbPath = process.env.DB_PATH
+  ? path.resolve(process.env.DB_PATH)
+  : path.join(__dirname, "users.db");
 
 // Connect to the SQLite database file (creates the file if it does not exist)
 const db = new sqlite3.Database(dbPath, (err) => {
   if (err) {
     console.error("Error connecting to the SQLite database:", err.message);
   } else {
-    console.log("Connected to SQLite database: users.db");
+    console.log(`Connected to SQLite database: ${dbPath}`);
   }
 });
 

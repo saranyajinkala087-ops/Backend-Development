@@ -5,13 +5,18 @@ const db = require("./database");
 
 // Create Express application instance
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Temporary secret key for signing JWTs
 const SECRET_KEY = "MY_TEMPORARY_SECRET_KEY";
 
 // Middleware to parse incoming JSON request bodies
 app.use(express.json());
+
+// Root endpoint for deployment health checks and browser verification
+app.get("/", (req, res) => {
+  res.send("Lab 4 Authentication API is running");
+});
 
 // Helper function to query a single row using a Promise for async/await
 const dbGet = (query, params = []) => {
@@ -114,9 +119,9 @@ app.post("/login", async (req, res) => {
   }
 });
 
-// Start the Express server
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}/`);
+// Start the Express server on all network interfaces (0.0.0.0) for cloud deployment
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running at http://0.0.0.0:${PORT}/`);
 });
 
 // Export app for testing or modular usage
